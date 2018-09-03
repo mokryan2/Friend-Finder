@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend-Finder!</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class=container>
+        <!-- Jumbotron -->
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Friend-Finder</h1>
+            <p class="lead">Looking for a friend? Answer some questions and we'll set you up with your new best buddy!</p>
+            <hr class="my-4">
+            <p>Because who doesn't need a friend?</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button"><i class="fa fa-home" aria-hidden="true"></i>
+                Home!</a>
+        </div>
+
+
+
+        <!--Insert Image File -->
+
+        <form>
+            <div class="form-group">
+                <h3><label for="nameInput">Name</label></h3>
+                <input type="name" class="form-control" id="nameInput" aria-describedby="name" placeholder="Enter Your name">
+            </div>
+            <div class="form-group">
+                <h3><label for="addImage">Add Your Pretty Face!</label></h3>
+                <input type="file" class="form-control-file" id="addImage">
+            </div>
+
+            <h1>Answer the Following Questions!</h1>
+
+            <h4>Question 1</h4>
+            <h5>I prefer to spend time on my own.</h5>
+            <select class="chosen-select" id="q1">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>
+            
+            <h4>Question 2</h4>
+            <h5>I enjoy trying/learning new things.</h5>
+            <select class="chosen-select" id="q2">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>
+
+            <h4>Question 3</h4>
+            <h5>I prefer to work in an active environment</h5>
+            <select class="chosen-select" id="q3">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>
+            
+            <h4>Question 4</h4>
+            <h5>I often say what's on my mind.</h5>
+            <select class="chosen-select" id="q4">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            
+            <br>
+            <br>
+
+            <h4>Question 5</h4>
+            <h5>I see myself as dependable.</h5>
+            <select class="chosen-select" id="q5">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>
+
+            <h4>Question 6</h4>
+            <h5>I have a kind and welcoming personality.</h5>
+            <select class="chosen-select" id="q6">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            
+            <br>
+            <br>
+            
+            <h4>Question 7</h4>
+            <h5>I am very critical of myself and my work.</h5>
+            <select class="chosen-select" id="q7">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>            
+
+            <h4>Question 8</h4>
+            <h5>I take the opinions of others to heart.</h5>
+            <select class="chosen-select" id="q8">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>
+            
+            <h4>Question 9</h4>
+            <h5>I am willing to admit when I am at fault.</h5>
+            <select class="chosen-select" id="q9">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>
+            
+            <h4>Question 10</h4>
+            <h5>I like to follow a schedule.</h5>
+            <select class="chosen-select" id="q10">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary"><i class="fas fa-check-circle"></i>Submit</button>
+        </form>
+
+
+    </div>
+</body>
+
+</html>

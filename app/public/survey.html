@@ -10,7 +10,10 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
     <!-- Font Awesome -->
@@ -28,7 +31,7 @@
             <p class="lead">Looking for a friend? Answer some questions and we'll set you up with your new best buddy!</p>
             <hr class="my-4">
             <p>Because who doesn't need a friend?</p>
-            <a class="btn btn-primary btn-lg" href="./home.html" role="button"><i class="fa fa-home" aria-hidden="true"></i>
+            <a class="btn btn-primary btn-lg" href="/home" role="button"><i class="fa fa-home" aria-hidden="true"></i>
                 Home!</a>
         </div>
 
@@ -39,7 +42,7 @@
         <form>
             <div class="form-group">
                 <h3><label for="nameInput">Name</label></h3>
-                <input type="name" class="form-control" id="nameInput" aria-describedby="name" placeholder="Enter Your name">
+                <input type="name" class="form-control" id="nameInput" aria-describedby="name" placeholder="Enter Your Name">
             </div>
             <div class="form-group">
                 <h3><label for="addImage">Add Your Pretty Face!</label></h3>
@@ -191,11 +194,59 @@
         <br>
         <br>
 
-        <button type="submit" class="btn btn-primary"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit Your Results!</button>
+        <!-- Button -->
+        <button type="submit" class="btn btn-primary" id="submitBtn"><i class="fa fa-check-circle" aria-hidden="true"></i>
+            Submit Your Results!</button>
 
+        <!-- Modal -->
+        <div class="modal">
+            <div class="modal-content">
+                <h4>Closest Friend Match</h4>
+                <h5 id="userMatch"></h5>
+                <img id="userMatchImage" width="300" src="">
+                <span class="close">&times;</span>
+                <p class="modal-text"></p>
+            </div>
 
+        </div>
 
     </div>
+
+    <script>
+        // Array to push data to
+        var userArray = [];
+
+        // Collects Data
+        $("#submitBtn").on("click", (event) => {
+            event.preventDefault();
+            for (let i = 1; i <= 10; i++) {
+                userArray.push($("#q" + i).val());
+                console.log(userArray)
+            };
+
+            var newFriend = {
+                name: $("#nameInput").val().trim(),
+                photo: $("#addImage").val(),
+                scores: userArray
+            };
+
+
+            //  AJAX post to friends api
+            $.post("/api/friends", newFriend, (data) => {
+                $("#userMatch").html(data.matchName);
+                $("#userMatchImage").attr("src", data.matchImage);
+                $(".modal").show();
+            });
+        });
+        $("body").on("click", ".close", function () {
+            $("#inputName").val("");
+            $(".modal").hide();
+            $(".custom-select").val("0");
+            answersArray = [];
+        });
+
+
+    </script>
 </body>
 
 </html>

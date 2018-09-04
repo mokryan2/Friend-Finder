@@ -10,21 +10,24 @@ module.exports = (app) => {
         var userResponse = userInput.scores;
         var matchName = "";
         var matchImg = "";
-        var totalDiff = 10000;
+        var totalDifference = 10000;
 
-        for (var i = 0; i < friendData.length; i++) {
+        for (i in friendData) {
             var diff = 0;
-            for (var j = 0; j < userResponse.length; j++) {
+            for (j in userResponse) {
                 diff += Math.abs(friendData[i].scores[j] - userResponse[j]);
             }
-            if (diff < totalDiff) {
-                totalDiff = diff;
-                matchName = friendData.name;
-                matchImg = friendData.photo;
+            if (diff < totalDifference) {
+                totalDifference = diff;
+                matchName = friendData[i].name;
+                matchImg = friendData[i].photo;
             }
         }
 
         friendData.push(req.body);
-        res.json({ status: `OK`, matchName: matchName, matchImg: matchImg });
+        res.json({ 
+            status: `OK`, 
+            matchName: matchName, 
+            matchImg: matchImg });
     })
 };

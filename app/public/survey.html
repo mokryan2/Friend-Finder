@@ -31,8 +31,7 @@
             <p class="lead">Looking for a friend? Answer some questions and we'll set you up with your new best buddy!</p>
             <hr class="my-4">
             <p>Because who doesn't need a friend?</p>
-            <a class="btn btn-primary btn-lg" href="/home" role="button"><i class="fa fa-home" aria-hidden="true"></i>
-                Home!</a>
+            <a class="btn btn-primary btn-lg" href="/home" role="button"><i class="fa fa-home" aria-hidden="true"></i> Home!</a>
         </div>
 
 
@@ -198,6 +197,8 @@
         <button type="submit" class="btn btn-primary" id="submitBtn"><i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit Your Results!</button>
 
+
+
         <!-- Modal -->
         <div class="modal">
             <div class="modal-content">
@@ -212,6 +213,14 @@
 
     </div>
 
+    <!-- Additional Links -->
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/api/friends" target="_blank">API Friends Link</a> | <a href="https://github.com/mokryan2/Friend-Finder" target="_blank">Github Repository
+                </a>
+        </div>
+    </footer>
     <script>
         // Array to push data to
         var userArray = [];
@@ -221,7 +230,6 @@
             event.preventDefault();
             for (let i = 1; i <= 10; i++) {
                 userArray.push($("#q" + i).val());
-                console.log(userArray)
             };
 
             var newFriend = {
@@ -229,7 +237,6 @@
                 photo: $("#addImage").val(),
                 scores: userArray
             };
-
 
             //  AJAX post to friends api
             $.post("/api/friends", newFriend, (data) => {

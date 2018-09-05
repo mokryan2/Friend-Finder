@@ -8,20 +8,18 @@
     <title>Friend-Finder!</title>
 
 
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-
-    <!-- Font Awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
 
-
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
@@ -57,7 +55,7 @@
         <h4>Question 1</h4>
         <h5>I prefer to spend time on my own.</h5>
         <select class="chosen-select" id="q1">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -71,7 +69,7 @@
         <h4>Question 2</h4>
         <h5>I enjoy trying/learning new things.</h5>
         <select class="chosen-select" id="q2">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -85,7 +83,7 @@
         <h4>Question 3</h4>
         <h5>I prefer to work in an active environment</h5>
         <select class="chosen-select" id="q3">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -99,7 +97,7 @@
         <h4>Question 4</h4>
         <h5>I often say what's on my mind.</h5>
         <select class="chosen-select" id="q4">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -114,7 +112,7 @@
         <h4>Question 5</h4>
         <h5>I see myself as dependable.</h5>
         <select class="chosen-select" id="q5">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -128,7 +126,7 @@
         <h4>Question 6</h4>
         <h5>I have a kind and welcoming personality.</h5>
         <select class="chosen-select" id="q6">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -142,7 +140,7 @@
         <h4>Question 7</h4>
         <h5>I am very critical of myself and my work.</h5>
         <select class="chosen-select" id="q7">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -156,7 +154,7 @@
         <h4>Question 8</h4>
         <h5>I take the opinions of others to heart.</h5>
         <select class="chosen-select" id="q8">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -170,7 +168,7 @@
         <h4>Question 9</h4>
         <h5>I am willing to admit when I am at fault.</h5>
         <select class="chosen-select" id="q9">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -184,7 +182,7 @@
         <h4>Question 10</h4>
         <h5>I like to follow a schedule.</h5>
         <select class="chosen-select" id="q10">
-            <option value=""></option>
+            <option value="">Pick a Number</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3 (Neutral)</option>
@@ -202,15 +200,13 @@
 
 
         <!-- Modal -->
-        <div class="container">
-            <div class="modal">
-                <div class="modal-content">
-                    <h4>Closest Friend Match</h4>
-                    <h5 id="userMatch"></h5>
-                    <img id="userMatchImage" width="300" src="">
-                    <span class="close">&times;</span>
-                    <p class="modal-text"></p>
-                </div>
+        <div class="modal">
+            <div class="modal-content">
+                <h4>Closest Friend Match</h4>
+                <h5 id="userMatch"></h5>
+                <img id="userMatchImage" width="175" src="">
+                <span class="close">&times;</span>
+                <p class="modal-text"></p>
             </div>
         </div>
 

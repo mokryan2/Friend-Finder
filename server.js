@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 var app = express();
 
-app.use(express.static("css"))
+app.use(express.static('css'));
 
 var PORT = process.env.PORT || 8080;
 
